@@ -1,4 +1,4 @@
-# JEE Project
+# JEE - Final Project
 
 * Beaussart Romain
 * Damien Lebret
@@ -6,3 +6,6 @@
 * Thomas Pasquier
 * Baptiste Peureaux
 
+---
+
+##Design and build an Employees Management Application 
