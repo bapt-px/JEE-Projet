@@ -1,0 +1,54 @@
+html,
+body {
+    width: 100%;
+    font-family: 'Arial';
+    color: #333;
+}
+
+.error_message {
+    color: #C55;
+    margin: 300px auto 0px auto;
+    width: 20%;
+
+}
+
+form {
+    width: 20%;
+    border: #AAA solid 1px;
+    border-radius: 5px;
+    margin: 5px auto;
+
+}
+
+form h2 {
+    background-color: #EEE;
+    height: 40px;
+    margin: -20px 0px 5px 0px;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+form h2 p {
+    padding: 10px 0px 10px 10px;
+    color: #333;
+}
+
+input {
+    border-radius: 5px;
+    height: 25px;
+    margin: 7px;
+    width: 70%;
+}
+
+input[type="submit"] {
+    width: 20%;
+    background-color: #518bc5;
+    color: #FFF;
+    font-size: 15px;
+    height: 30px;
+    transition: 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #417bb5;
+}
