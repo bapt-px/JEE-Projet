@@ -3,13 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.bapt.package1;
+package com.bapt.package2;
 
 import com.sun.org.apache.bcel.internal.generic.D2F;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,13 +27,17 @@ public class Index extends HttpServlet {
     
      public void doGet( HttpServletRequest request, HttpServletResponse response )	throws ServletException, IOException {
         /* Ne fait rien d'autre qu'appeler une JSP */
-        HttpSession session = request.getSession();
+        
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("credentialsDB") ;
+    	EntityManager em = emf.createEntityManager();
+        System.out.println(em.find(Employee.class, 4).getAdress());
+        /*HttpSession session = request.getSession();
         if(session.getAttribute("isLog") != null ) response.sendRedirect("./list");
         else {
-        DB.connect();
-       
+        Database.connect();
+       */
         this.getServletContext().getRequestDispatcher( "/index.jsp" ).forward( request, response );
-        }
+       // }
     }
 	
     public void doPost( HttpServletRequest request, HttpServletResponse response )	throws ServletException, IOException {
@@ -42,7 +49,7 @@ public class Index extends HttpServlet {
         System.out.print("attribute : " + (String) request.getAttribute("login"));
         System.out.print("parameter : " + (String) request.getParameter("login"));
         try {
-            if(DB.login((String) request.getParameter("login"), (String) request.getParameter("password"))) {
+            if(Database.login((String) request.getParameter("login"), (String) request.getParameter("password"))) {
                  request.setAttribute("loginError", "false");
                  session.setAttribute("isLog", true);
                  response.sendRedirect("./list");

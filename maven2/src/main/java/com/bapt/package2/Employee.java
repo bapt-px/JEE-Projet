@@ -1,70 +1,77 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package com.bapt.package1;
+package com.bapt.package2;
 
-/**
- *
- * @author Baptiste
- */
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
 public class Employee {
-    
-        private int id;
+	
+	@Id
+	private int ID;
+	
+	private String name;
+	private String telhome; 
+	private String firstName; 
+	private String telMob;
+	private String telPro;
+	private String adress;
+	private String postalCode;
+	private String city;
+	
+	public int getId() {
+		return ID;
+	}
+	public void setId(int id) {
+		this.ID = id;
+	}
 
-  
-	private String name, firstName, telehome, telMob, telPro, adress, postalCode, city, email;
-
-        public Employee() {
-            id = 0;
-        }
-	public Employee(String p_name, String p_firstName, String p_telehome, String p_telMob, String p_telPro, String p_adress, String p_postalCode, String p_city, String p_email, int p_id) {
+	private String email;
+	
+	public Employee() {
+		
+	}
+	public Employee(String p_name, String p_firstName, String p_telehome, String p_telMob, String p_telPro, String p_adress, String p_postalCode, String p_city, String p_email) {
 		 
 		 this.name = p_name;
 		 this.firstName = p_firstName;
-		 this.telehome = p_telehome;
+		 this.telhome = p_telehome;
 		 this.telMob = p_telMob;
 		 this.telPro = p_telPro;
 		 this.adress = p_adress;
 		 this.postalCode = p_postalCode;
 		 this.city = p_city;
 		 this.email = p_email;
-		 this.id = p_id;
 
 	}
-          public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-        
+
+
+	public int getID() {
+		return ID;
+	}
+	public void setID(int iD) {
+		ID = iD;
+	}
 	public String getName() {
 		return name;
 	}
-
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	public String getTelhome() {
+		return telhome;
+	}
+	public void setTelhome(String telhome) {
+		this.telhome = telhome;
+	}
 	public String getFirstName() {
 		return firstName;
 	}
-
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
 
-	public String getTelehome() {
-		return telehome;
-	}
-
-	public void setTelehome(String telehome) {
-		this.telehome = telehome;
-	}
 
 	public String getTelMob() {
 		return telMob;
