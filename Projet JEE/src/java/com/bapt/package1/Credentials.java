@@ -12,9 +12,9 @@ package com.bapt.package1;
 public class Credentials {
     public static String type = "mysql";
     public static String db = "jeedb";
-    public static String address = "localhost";
+    public static String address = "myappinstance.c2wtcej1vlyc.eu-west-3.rds.amazonaws.com";
     public static String port = "3306";
     public static String user = "root";
-    public static String password = "1234";
+    public static String password = "12345678";
     
 }
